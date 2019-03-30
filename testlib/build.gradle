@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
@@ -25,8 +27,8 @@ ext {
     siteUrl = 'https://github.com/wangsun6/testLib'
     gitUrl = 'https://github.com/wangsun6/testLib.git'
 
-    libraryVersionCode = 2
-    libraryVersion = '1.0.1'
+    libraryVersionCode = 3
+    libraryVersion = '1.0.2'
 
     developerId = 'wangsun6'
     developerName = 'Wangsun Hakhun'
@@ -69,6 +71,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 group = publishedGroupId
@@ -115,7 +118,7 @@ task sourcesJar(type: Jar) {
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    excludes = ['**/*.kt'] // < ---- Exclude all kotlin files from javadoc file.
+    //excludes = ['**/*.kt'] // < ---- Exclude all kotlin files from javadoc file.
 }
 
 //task javadoc(type: Javadoc) {
