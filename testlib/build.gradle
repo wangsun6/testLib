@@ -22,8 +22,8 @@ ext {
 
     libraryDescription = 'Android Library for selecting images from local storage'
 
-    siteUrl = 'https://github.com/Turtlebody/android-image-picker'
-    gitUrl = 'https://github.com/Turtlebody/android-image-picker.git'
+    siteUrl = 'https://github.com/wangsun6/testLib'
+    gitUrl = 'https://github.com/wangsun6/testLib.git'
 
     libraryVersion = '1.0.0'
 
@@ -111,15 +111,16 @@ task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
 }
 
-//task javadoc(type: Javadoc) {
-//    source = android.sourceSets.main.java.srcDirs
-//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-//}
-
 task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
     excludes = ['**/*.kt'] // < ---- Exclude all kotlin files from javadoc file.
-    // ...
 }
+
+//task javadoc(type: Javadoc) {
+//    excludes = ['**/*.kt'] // < ---- Exclude all kotlin files from javadoc file.
+//    // ...
+//}
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
