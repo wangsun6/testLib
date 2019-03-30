@@ -14,10 +14,10 @@ buildscript {
 }
 ext {
     bintrayRepo = 'bintray-my-repo'
-    bintrayName = 'testLib'
+    bintrayName = 'com.wangsun.testlib'
 
     publishedGroupId = 'com.wangsun'
-    libraryName = 'TestLib'
+    libraryName = 'TestLib22'
     artifact = 'justTest'
 
     libraryDescription = 'Android Library for selecting images from local storage'
@@ -25,7 +25,8 @@ ext {
     siteUrl = 'https://github.com/wangsun6/testLib'
     gitUrl = 'https://github.com/wangsun6/testLib.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersionCode = 2
+    libraryVersion = '1.0.1'
 
     developerId = 'wangsun6'
     developerName = 'Wangsun Hakhun'
@@ -45,8 +46,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode libraryVersionCode
+        versionName libraryVersion
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
